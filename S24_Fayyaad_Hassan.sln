@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S24_Fayyaad_Hassan", "S24_Fayyaad_Hassan\S24_Fayyaad_Hassan.vcxproj", "{0DB03D18-45BA-4676-BE8A-1EFECDD949CE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GlassBird", "GlassBird\GlassBird.vcxproj", "{1DC3B28A-37B9-4A7D-8B64-8DD5DD449B73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DB03D18-45BA-4676-BE8A-1EFECDD949CE}.Debug|x64.ActiveCfg = Debug|x64
+		{0DB03D18-45BA-4676-BE8A-1EFECDD949CE}.Debug|x64.Build.0 = Debug|x64
+		{0DB03D18-45BA-4676-BE8A-1EFECDD949CE}.Release|x64.ActiveCfg = Release|x64
+		{0DB03D18-45BA-4676-BE8A-1EFECDD949CE}.Release|x64.Build.0 = Release|x64
+		{1DC3B28A-37B9-4A7D-8B64-8DD5DD449B73}.Debug|x64.ActiveCfg = Debug|x64
+		{1DC3B28A-37B9-4A7D-8B64-8DD5DD449B73}.Debug|x64.Build.0 = Debug|x64
+		{1DC3B28A-37B9-4A7D-8B64-8DD5DD449B73}.Release|x64.ActiveCfg = Release|x64
+		{1DC3B28A-37B9-4A7D-8B64-8DD5DD449B73}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EBB661C-A0A7-4F71-96C2-89DBD3606144}
+	EndGlobalSection
+EndGlobal
