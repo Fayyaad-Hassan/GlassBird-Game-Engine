@@ -3,10 +3,18 @@
 
 class MyGame : public GlassBird::GlassBirdApplication
 {
+	virtual void Initialize() override
+	{
+
+	}
+
 	virtual void OnUpdate() override
 	{
-		std::cout << "Engine is Running" << std::endl;
+		std::cout << "window width " << GlassBird::GlassBirdWindow::GetWindow()->GetWidth() << std::endl;
 	}
+
+private:
+
 };
 
 START_GAME(MyGame);
