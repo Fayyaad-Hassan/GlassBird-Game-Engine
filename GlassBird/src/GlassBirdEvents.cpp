@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "GlassBirdEvents.h"
 
 namespace GlassBird

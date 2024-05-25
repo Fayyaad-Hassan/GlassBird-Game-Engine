@@ -141,6 +141,8 @@
     <ClInclude Include="src\codeOpenGL\RendererOpenGL.h" />
     <ClInclude Include="src\codeOpenGL\ShaderOpenGL.h" />
     <ClInclude Include="src\GlassBirdApplication.h" />
+    <ClInclude Include="src\GlassBirdEvents.h" />
+    <ClInclude Include="src\GlassBirdKeys.h" />
     <ClInclude Include="src\GlassBirdWindow.h" />
     <ClInclude Include="src\Image.h" />
     <ClInclude Include="src\ImageImplement.h" />
@@ -149,6 +151,7 @@
     <ClInclude Include="src\RendererImplement.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\ShaderImplement.h" />
+    <ClInclude Include="src\Unit.h" />
     <ClInclude Include="src\Utility.h" />
     <ClInclude Include="src\WindowImpl.h" />
   </ItemGroup>
@@ -158,6 +161,7 @@
     <ClCompile Include="src\codeOpenGL\RendererOpenGL.cpp" />
     <ClCompile Include="src\codeOpenGL\ShaderOpenGL.cpp" />
     <ClCompile Include="src\GlassBirdApplication.cpp" />
+    <ClCompile Include="src\GlassBirdEvents.cpp" />
     <ClCompile Include="src\GlassBirdWindow.cpp" />
     <ClCompile Include="src\Image.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -166,6 +170,7 @@
     </ClCompile>
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
+    <ClCompile Include="src\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glad\glad.vcxproj">

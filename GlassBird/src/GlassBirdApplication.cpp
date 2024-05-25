@@ -9,6 +9,7 @@
 #include "Renderer.h"
 #include "Image.h"
 #include "Shader.h"
+#include "GlassBirdKeys.h"
 
 namespace GlassBird
 {
@@ -32,10 +33,6 @@ namespace GlassBird
 		Renderer::Init();
 
 
-		/// SHADERS ///
-
-		Shader sProg{ "C:\\Users\\hassa\\Desktop\\s24\\S24_Fayyaad_Hassan\\GlassBird\\Assets\\Shaders\\DefaultVertexShader.glsl", "C:\\Users\\hassa\\Desktop\\s24\\S24_Fayyaad_Hassan\\GlassBird\\Assets\\Shaders\\DefaultFragmentShader.glsl" };
-
 		/// TEXTURE ///
 
 		GlassBird::Image pic{"C:\\Users\\hassa\\Desktop\\s24\\S24_Fayyaad_Hassan\\GlassBird\\Assets\\Textures\\Test.png"};
@@ -46,13 +43,18 @@ namespace GlassBird
 
 		int x{ 50 };
 
+		SetKeyPressedCallback([&x](const KeyPressed& event) 
+			{
+				if (event.GetKeyCode() == GLASSBIRD_KEY_RIGHT)
+					x += 50;
+			});
+
 		while (true)
 		{
 			Renderer::ClearScreen();
 			OnUpdate();
 
 			Renderer::Draw(pic, x, 100);
-			x += 2;
 
 			std::this_thread::sleep_until(mNextFrameTime);
 			mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
@@ -73,12 +75,12 @@ namespace GlassBird
 
 	void GlassBirdApplication::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc)
 	{
-		mWindow.SetKeyReleasedCallback(callbackFunc);
+		GlassBirdWindow::GetWindow()->SetKeyReleasedCallback(callbackFunc);
 	}
 	
 	void GlassBirdApplication::SetWindowCloseCallback(std::function<void()> callbackFunc)
 	{
-		mWindow.SetWindowCloseCallback(callbackFunc);
+		GlassBirdWindow::GetWindow()->SetWindowCloseCallback(callbackFunc);
 	}
 }
 

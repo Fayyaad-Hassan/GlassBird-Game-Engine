@@ -59,4 +59,19 @@ namespace GlassBird
 		return mWindow->GetHeight();
 	}
 
+	void GlassBirdWindow::SetKeyPressedCallback(std::function<void(const KeyPressed&)> callbackFunc)
+	{
+		mWindow->SetKeyPressedCallback(callbackFunc);
+	}
+
+	void GlassBirdWindow::SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc)
+	{
+		mWindow->SetKeyReleasedCallback(callbackFunc);
+	}
+
+	void GlassBirdWindow::SetWindowCloseCallback(std::function<void()> callbackFunc)
+	{
+		mWindow->SetWindowCloseCallback(callbackFunc);
+	}
+
 }
