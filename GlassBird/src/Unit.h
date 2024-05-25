@@ -26,6 +26,7 @@ namespace GlassBird
 		int mYPosition;
 
 		friend GLASSBIRD_API bool UnitsOverlap(const Unit& a, const Unit& b);
+		friend class Renderer;
 	};
 
 	GLASSBIRD_API bool UnitsOverlap(const Unit& a, const Unit& b);

@@ -1,0 +1,15 @@
+How does the game work?
+----------------------------------------------------------------------------------------
+The player uses the arrow keys to move around the scope. Pressing "space" will "shoot" the 
+turkey. However, there is a random chance that the turkey will "run away" when you get close
+to it.
+
+If the player manages to shoot the turkey, they win. Very simple game. Very rage inducing.
+----------------------------------------------------------------------------------------
+
+
+What makes my game unique?
+----------------------------------------------------------------------------------------
+I implemented a random chance for the turkey to "run away" using a random number generator. There is a 30% chance for the turkey to run away.  This makes it surprisingly VERY difficult to catch the turkey. Furthermore, the player is able to "shoot" the turkey. These game mechanics make my game "unique".
+----------------------------------------------------------------------------------------
+

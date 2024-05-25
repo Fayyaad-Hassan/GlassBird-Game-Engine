@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef GLASSBIRD_GLFW_WINDOW
+// #ifdef GLASSBIRD_GLFW_WINDOW
 #define GLASSBIRD_KEY_SPACE              32
 #define GLASSBIRD_KEY_APOSTROPHE         39  /* ' */
 #define GLASSBIRD_KEY_COMMA              44  /* , */
@@ -123,6 +123,6 @@
 #define GLASSBIRD_KEY_RIGHT_ALT          346
 #define GLASSBIRD_KEY_RIGHT_SUPER        347
 #define GLASSBIRD_KEY_MENU               348
-#else 
-	#definition_GLASSBIRD_GLFW_is_missing
-#endif
+//#else 
+//	#definition_GLASSBIRD_GLFW_is_missing
+//#endif

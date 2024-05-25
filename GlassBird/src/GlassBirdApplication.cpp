@@ -13,6 +13,16 @@
 
 namespace GlassBird
 {
+	GlassBirdApplication::GlassBirdApplication()
+	{
+		GlassBirdWindow::Init();
+		GlassBirdWindow::GetWindow()->Create(1000, 800);
+
+		Renderer::Init();
+
+		SetWindowCloseCallback([this]() {DefaultWindowCloseHandler(); });
+	}
+
 	void GlassBirdApplication::Initialize()
 	{
 	}
@@ -27,34 +37,16 @@ namespace GlassBird
 
 	void GlassBirdApplication::Run()
 	{
-		GlassBirdWindow::Init();
-		GlassBirdWindow::GetWindow()->Create(1000, 800);
-
-		Renderer::Init();
-
-
-		/// TEXTURE ///
-
-		GlassBird::Image pic{"C:\\Users\\hassa\\Desktop\\s24\\S24_Fayyaad_Hassan\\GlassBird\\Assets\\Textures\\Test.png"};
 
 		Initialize();
 
 		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
-		int x{ 50 };
 
-		SetKeyPressedCallback([&x](const KeyPressed& event) 
-			{
-				if (event.GetKeyCode() == GLASSBIRD_KEY_RIGHT)
-					x += 50;
-			});
-
-		while (true)
+		while (mShouldContinue)
 		{
 			Renderer::ClearScreen();
 			OnUpdate();
-
-			Renderer::Draw(pic, x, 100);
 
 			std::this_thread::sleep_until(mNextFrameTime);
 			mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
@@ -81,6 +73,11 @@ namespace GlassBird
 	void GlassBirdApplication::SetWindowCloseCallback(std::function<void()> callbackFunc)
 	{
 		GlassBirdWindow::GetWindow()->SetWindowCloseCallback(callbackFunc);
+	}
+
+	void GlassBirdApplication::DefaultWindowCloseHandler()
+	{
+		mShouldContinue = false;
 	}
 }
 

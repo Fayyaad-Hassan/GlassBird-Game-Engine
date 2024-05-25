@@ -11,6 +11,8 @@ namespace GlassBird
 	class GLASSBIRD_API GlassBirdApplication
 	{
 	public:
+		GlassBirdApplication();
+
 		virtual void Initialize();
 		virtual void OnUpdate();
 		virtual void Shutdown();
@@ -21,8 +23,12 @@ namespace GlassBird
 		void SetKeyReleasedCallback(std::function<void(const KeyReleased&)> callbackFunc);
 		void SetWindowCloseCallback(std::function<void()> callbackFunc);
 
+		void DefaultWindowCloseHandler();
+
 	private:
 		std::chrono::steady_clock::time_point mNextFrameTime;
 		std::chrono::milliseconds mFrameDuration{ std::chrono::milliseconds{1000} / GLASSBIRD_FRAME_RATE };
+
+		bool mShouldContinue{ true };
 	};
 }
