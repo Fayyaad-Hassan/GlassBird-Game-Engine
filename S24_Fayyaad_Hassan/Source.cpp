@@ -10,7 +10,7 @@ class MyGame : public GlassBird::GlassBirdApplication
 
 	virtual void OnUpdate() override
 	{
-		std::cout << "window width " << GlassBird::GlassBirdWindow::GetWindow()->GetWidth() << std::endl;
+		// std::cout << "window width " << GlassBird::GlassBirdWindow::GetWindow()->GetWidth() << std::endl; // Window Width Text
 	}
 
 private:

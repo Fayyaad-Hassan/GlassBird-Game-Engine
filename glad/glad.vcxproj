@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1dc3b28a-37b9-4a7d-8b64-8dd5dd449b73}</ProjectGuid>
-    <RootNamespace>GlassBird</RootNamespace>
+    <ProjectGuid>{9d63665d-181c-4e26-b281-9d13099439b1}</ProjectGuid>
+    <RootNamespace>glad</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -102,12 +102,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);GLASSBIRD_LIB;GLASSBIRD_MS_COMPILER;GLASSBIRD_DEBUG=2;GLASSBIRD_GLFW_WINDOW;GLASSBIRD_OPENGL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)GlassBird\src;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;$(SolutionDir)stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)glad/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,12 +117,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);GLASSBIRD_LIB;GLASSBIRD_LIB;GLASSBIRD_MS_COMPILER;GLASSBIRD_GLFW_WINDOW;GLASSBIRD_OPENGL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)GlassBird\src;$(SolutionDir)glfw\include;$(SolutionDir)glad\include;$(SolutionDir)stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)glad/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -135,48 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\GlassBird.h" />
-    <ClInclude Include="src\codeGLFW\WindowGLFW.h" />
-    <ClInclude Include="src\codeOpenGL\ImageOpenGL.h" />
-    <ClInclude Include="src\codeOpenGL\RendererOpenGL.h" />
-    <ClInclude Include="src\codeOpenGL\ShaderOpenGL.h" />
-    <ClInclude Include="src\GlassBirdApplication.h" />
-    <ClInclude Include="src\GlassBirdWindow.h" />
-    <ClInclude Include="src\Image.h" />
-    <ClInclude Include="src\ImageImplement.h" />
-    <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\Renderer.h" />
-    <ClInclude Include="src\RendererImplement.h" />
-    <ClInclude Include="src\Shader.h" />
-    <ClInclude Include="src\ShaderImplement.h" />
-    <ClInclude Include="src\Utility.h" />
-    <ClInclude Include="src\WindowImpl.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\codeGLFW\WindowGLFW.cpp" />
-    <ClCompile Include="src\codeOpenGL\ImageOpenGL.cpp" />
-    <ClCompile Include="src\codeOpenGL\RendererOpenGL.cpp" />
-    <ClCompile Include="src\codeOpenGL\ShaderOpenGL.cpp" />
-    <ClCompile Include="src\GlassBirdApplication.cpp" />
-    <ClCompile Include="src\GlassBirdWindow.cpp" />
-    <ClCompile Include="src\Image.cpp" />
-    <ClCompile Include="src\pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="src\Renderer.cpp" />
-    <ClCompile Include="src\Shader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\glad\glad.vcxproj">
-      <Project>{9d63665d-181c-4e26-b281-9d13099439b1}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\glfw_build\src\glfw.vcxproj">
-      <Project>{56310eaf-0fd1-3368-9f76-740a5fe958d5}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\stbi\stbi.vcxproj">
-      <Project>{268b5c90-2287-4536-a2b4-18a9b68220ed}</Project>
-    </ProjectReference>
+    <ClCompile Include="src\glad.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
